@@ -1,0 +1,18 @@
+[project]
+name = "cmless"
+version = "0.1.0"
+description = "CMLess python parsers"
+readme = "README.md"
+authors = [{ name = "Harpo Harbert", email = "ryan_harbert@wgbh.org" }]
+requires-python = ">=3.12"
+dependencies = [
+    "markdown>=3.11.3",
+    "pydantic>=2.14.3",
+]
+
+[project.scripts]
+cmless = "cmless:main"
+
+[build-system]
+requires = ["uv_build>=0.11.18,<0.12.0"]
+build-backend = "uv_build"
