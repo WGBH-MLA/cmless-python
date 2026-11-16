@@ -1,6 +1,6 @@
 [project]
 name = "cmless"
-version = "0.1.0"
+version = "0.2.0"
 description = "CMLess python parsers"
 readme = "README.md"
 authors = [{ name = "Harpo Harbert", email = "ryan_harbert@wgbh.org" }]
@@ -20,6 +20,4 @@ requires = ["uv_build>=0.11.18,<0.12.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
-dev = [
-    "pytest>=9.2.0",
-]
+dev = ["pytest>=9.2.0"]
