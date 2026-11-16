@@ -122,6 +122,16 @@ class TestParseRecordsMarkdown:
             "cpb-aacip-507-jm23b5x502",
         ]
 
+    def test_keeps_underscore_guids_intact(self):
+        text = (
+            "- [A](/catalog/cpb-aacip_52-655dvb1d) (KRMA-TV, 1973).\n"
+            "- [B](/catalog/cpb-aacip-52-655dvb1d)\n"
+        )
+        assert parse_records_markdown(text) == [
+            "cpb-aacip_52-655dvb1d",
+            "cpb-aacip-52-655dvb1d",
+        ]
+
 
 class TestParseAuthorsMarkdown:
     def test_extracts_name_title_and_image(self):
