@@ -196,10 +196,9 @@ def parse_records_markdown(markdown_string: str) -> list[str]:
         List[str]: List of record guids
     """
     # Pattern to match [Record Title](record_url)
-    pattern = r'- \[.*?\]\(/catalog/cpb-aacip-([a-zA-Z0-9_-]+)\)'
-    matches = re.findall(pattern, markdown_string)
-    record_guids = [f'cpb-aacip-{match.strip()}' for match in matches]
-    return record_guids
+    # GUIDs are either cpb-aacip-<id> or cpb-aacip_<id>
+    pattern = r'- \[.*?\]\(/catalog/(cpb-aacip[-_][a-zA-Z0-9_-]+)\)'
+    return re.findall(pattern, markdown_string)
 
 
 def pasre_authors_markdown(markdown_string: str) -> list[Author]:
